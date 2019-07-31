@@ -132,8 +132,9 @@ public class ABGameWorld : ABSingleton<ABGameWorld> {
 				_levelTimesTried = 0;
 			}
 		}
-
-		_slingshotBaseTransform = GameObject.Find ("slingshot_base").transform;
+        GameObject gameObject = GameObject.Find("slingshot_base");
+        if (gameObject)
+            _slingshotBaseTransform = gameObject.transform;
 	}
 
 	public void DecodeLevel(ABLevel currentLevel)  {
